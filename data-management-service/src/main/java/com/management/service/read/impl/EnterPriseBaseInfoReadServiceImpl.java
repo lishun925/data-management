@@ -33,7 +33,7 @@ public class EnterPriseBaseInfoReadServiceImpl implements EnterPriseBaseInfoRead
      */
     @Override
     public List<Map<String, Object>> getQueryAll() {
-        //string数据操作
+        //string数据操作6
         ValueOperations valueOperations = redisTemplate.opsForValue();
         //hash类型的数据操作
         HashOperations hashOperations = redisTemplate.opsForHash();
