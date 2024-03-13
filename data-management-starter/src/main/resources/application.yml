@@ -1,0 +1,29 @@
+#配置数据库连接
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/test?useUnicode=true&characterEncoding=utf8&useSSL=false&serverTimezone=GMT%2B8
+    username: root
+    password: 123456
+    druid: #配置数据池
+      initial-size: 5
+      max-active: 300
+  profiles:
+    active: dev
+    redis:
+      host: ${redisDriver.redis.host}
+      port: ${redisDriver.redis.port}
+      password: ${redisDriver.redis.password}
+      database: ${redisDriver.redis.database}
+mybatis:
+#  # 搜索指定包别名
+#  typeAliasesPackage: com.sc
+  # 配置mapper的扫描，找到所有的mapper.xml映射文件
+  mapperLocations: classpath*:mapper/**/*.xml
+
+
+logging:
+  charset:
+    console: utf-8
+  level:
+    org.springframework.boot.autoconfigure: error
